@@ -1,7 +1,10 @@
 spring:
+  application:
+    name: "limits-service"
+  profiles:
+    active: "dev"
   config:
     import: "optional:configserver:http://localhost:8888"
-
-limits-service:
-  minimum: 2
-  maximum: 998
+  cloud:
+    config:
+      profile: "dev"
